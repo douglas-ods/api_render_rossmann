@@ -4,7 +4,7 @@ from flask             import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
 # loading model
-model = pickle.load(open(r"C:/Users/Douglas/Documents/repos/datascience_em_producao/model/maquina_preditiva.pkl","rb"))
+model = pickle.load(open("model/maquina_preditiva.pkl","rb"))
 
 app=Flask(__name__)
 @app.route("/rossmann/predict",methods=["POST"])

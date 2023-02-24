@@ -7,11 +7,11 @@ import datetime
 
 class Rossmann(object):
     def __init__(self):
-        self.competition_distance_scaler   = pickle.load(open(r"C:\Users\Douglas\Documents\repos\datascience_em_producao\parameter\competition_distance_scaler.pkl","rb"))
-        self.competition_time_month_scaler = pickle.load(open(r"C:\Users\Douglas\Documents\repos\datascience_em_producao\parameter\competition_time_month_scaler.pkl","rb"))
-        self.promo_time_week_scaler        = pickle.load(open(r"C:\Users\Douglas\Documents\repos\datascience_em_producao\parameter\promo_time_week_scaler.pkl","rb"))      
-        self.year_scaler                   = pickle.load(open(r"C:\Users\Douglas\Documents\repos\datascience_em_producao\parameter\year_scaler.pkl","rb"))
-        self.store_type_scaler             = pickle.load(open(r"C:\Users\Douglas\Documents\repos\datascience_em_producao\parameter\store_type_scaler.pkl","rb")) 
+        self.competition_distance_scaler   = pickle.load(open("parameter\competition_distance_scaler.pkl","rb"))
+        self.competition_time_month_scaler = pickle.load(open("parameter\competition_time_month_scaler.pkl","rb"))
+        self.promo_time_week_scaler        = pickle.load(open("parameter\promo_time_week_scaler.pkl","rb"))      
+        self.year_scaler                   = pickle.load(open("parameter\year_scaler.pkl","rb"))
+        self.store_type_scaler             = pickle.load(open("parameter\store_type_scaler.pkl","rb")) 
     def data_cleaning(self,df1):            
         ## 1.1 Rename Columns
         cols_old = ['Store','DayOfWeek','Date','Open','Promo','StateHoliday','SchoolHoliday','StoreType','Assortment','CompetitionDistance','CompetitionOpenSinceMonth','CompetitionOpenSinceYear','Promo2','Promo2SinceWeek','Promo2SinceYear','PromoInterval']
