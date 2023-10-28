@@ -50,9 +50,10 @@ class Rossmann(object):
         # day
         df2["day"] = df2["date"].dt.day
         # week of year
-        df2["year_of_week"] = df2["date"].dt.weekofyear
+        #df2["year_of_week"] = df2["date"].dt.weekofyear
         # year week
-        df2["year_week"] = df2["date"].dt.strftime("%Y-%W")
+        df2["year_week"] = df2["date"].dt.week
+        #df2["year_week"] = df2["date"].dt.strftime("%Y-%W")
         # competition since
         df2["competition_since"] = df2.apply(lambda x :datetime.datetime(year=x["competition_open_since_year"],month=x["competition_open_since_month"],day=1),axis=1)
         df2["competition_time_month"] = ((df2["competition_since"] - df2["date"]) /30) .apply(lambda x: x.days).astype(int)
