@@ -52,7 +52,7 @@ class Rossmann(object):
         # week of year
         #df2["year_of_week"] = df2["date"].dt.weekofyear
         # year week
-        df2["year_week"] = df2["date"].dt.week
+        df2["year_week"] = df2['date'].dt.isocalendar().week 
         #df2["year_week"] = df2["date"].dt.strftime("%Y-%W")
         # competition since
         df2["competition_since"] = df2.apply(lambda x :datetime.datetime(year=x["competition_open_since_year"],month=x["competition_open_since_month"],day=1),axis=1)
