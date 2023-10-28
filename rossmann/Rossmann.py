@@ -97,8 +97,8 @@ class Rossmann(object):
         df5["day_cos"] = df5["day"].apply(lambda x: np.cos( x * (2. * np.pi/30 )))
         df5["day_sin"] = df5["day"].apply(lambda x: np.sin( x * (2. * np.pi/30 )))                                      
         #year_of_week
-        df5["year_of_week_cos"] = df5["year_of_week"].apply(lambda x: np.cos( x * (2. * np.pi/52)))
-        df5["year_of_week_sin"] = df5["year_of_week"].apply(lambda x: np.sin( x * (2. * np.pi/52)))
+        df5["year_of_week_cos"] = df5["year_week"].apply(lambda x: np.cos( x * (2. * np.pi/52)))
+        df5["year_of_week_sin"] = df5["year_week"].apply(lambda x: np.sin( x * (2. * np.pi/52)))
         cols_selected = ['store','promo','store_type','assortment', 'competition_distance', 'competition_open_since_month','competition_open_since_year','promo2','promo2_since_week','promo2_since_year','competition_time_month','promo_time_week', 'day_of_week_cos', 'day_of_week_sin','month_cos', 'day_cos', 'day_sin', 'year_of_week_cos']            
         return df5[cols_selected]
     
